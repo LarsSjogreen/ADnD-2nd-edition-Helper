@@ -6,6 +6,7 @@ var menu = (function () {
     console.log("B: Roll for a common treasure");
     console.log("C: Unknown");
     console.log("D: Roll 3d6");
+    console.log("S: Start server on http://localhost:3000")
     console.log("M: Menu");
     console.log("Q: Quit");
   };
