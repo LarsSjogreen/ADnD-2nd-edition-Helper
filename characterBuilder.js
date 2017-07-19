@@ -26,6 +26,7 @@ var characterBuilder = (function () {
     stats = getRace(stats);
     stats = getCharacterClass(stats);
     stats = getAlignment(stats);
+    stats = getAge(stats);
     stats = getStatic(stats);
     return stats;
   }
@@ -34,6 +35,57 @@ var characterBuilder = (function () {
     stats.level = 1;
     stats.playerName = "____________________________";
     stats.family = "von Neumann";
+    stats.sex = ["Female","Male"][mathHelp.randomInt(0,2)];
+    return stats;
+  }
+
+  var getAge = function(stats) {
+    stats.age = 120;
+    if (stats.race == "Human") {
+      var baseAge = 18;
+      switch (stats.class) {
+        case "Fighter":
+          baseAge = 15;
+          baseAge += dice.d4();
+          break;
+        case "Paladin":
+          baseAge = 17;
+          baseAge += dice.d4();
+          break;
+        case "Ranger":
+        case "Assassin":
+          baseAge = 20;
+          baseAge += dice.d4();
+          break;
+        case "Monk":
+          baseAge = 21;
+          baseAge += dice.d4();
+          break;
+        case "Magic-user":
+          baseAge = 24;
+          baseAge += dice.d8() + dice.d8();
+          break;
+        case "Illusionist":
+          baseAge = 30;
+          baseAge += dice.d6();
+          break;
+        default:
+          baseAge += dice.d4();
+      }
+      stats.age = baseAge;
+    } else if (stats.race == "Dwarf") {
+      stats.age = 250 + dice.d20() + dice.d20();
+    } else if (stats.race == "Elf") {
+      stats.age = 500 + dice.r10d10();
+    } else if (stats.race == "Gnome") {
+      stats.age = 300 + dice.d12() + dice.d12() + dice.d12();
+    } else if (stats.race == "Half-Elf") {
+      stats.age = 40 + dice.d4() + dice.d4();
+    } else if (stats.race == "Halfling") {
+      stats.age = 20 + dice.d4() + dice.d4() + dice.d4();
+    } else if (stats.race == "Half-Orc") {
+      stats.age = 20 + dice.d4();
+    }
     return stats;
   }
 
