@@ -37,6 +37,14 @@ var dice = (function() {
     return sum;
   };
 
+  var roll = function(numDice, dieFunc) {
+    var sum = 0;
+    for (var i=0;i<numDice;i++) {
+      sum += dieFunc();
+    }
+    return sum;
+  }
+
   return {
     d4: d4,
     d6: d6,
@@ -46,6 +54,7 @@ var dice = (function() {
     d20: d20,
     r3d6: r3d6,
     r10d10: r10d10,
+    roll: roll
   };
 }());
 

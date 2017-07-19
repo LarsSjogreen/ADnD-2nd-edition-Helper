@@ -38,6 +38,9 @@ r1.on('line', (line) => {
     case "D":
       console.log("Diceroll: " + dice.r3d6());
       break;
+    case "E":
+      console.log("Roll 3d4: " + dice.roll(3, dice.d4));
+      break;
     case "S":
       serverInstance = server.startServer(character);
       break;
