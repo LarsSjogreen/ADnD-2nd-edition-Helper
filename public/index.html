@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>AD&amp;D GM assistant</title>
+  <script src="js/vue.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+
+
+<body>
+  <div id="app">
+    <h1 class="title"><span class="pretitle">{{ pretitle }}</span>{{ title }}<br/><span class="subtitle">{{ subtitle }}</span></h1>
+    <p class="characterInfo">
+      <span class="charNameText">Character: {{ newChar.name }}</span><br/>
+      <span class="charText">Align.: {{ newChar.alignment }}</span>
+      <span class="charText">Race: {{ newChar.race }}</span>
+      <span class="charText">Class: {{ newChar.class }}</span>
+      <span class="charText">Level: {{ newChar.level }}</span>
+      <br/>
+      <span class="charNameText">Player's name: {{ newChar.playerName }}</span>
+    </p>
+    <div class="row">
+      <div class="characterAbilities">
+        <span class="stats"><span class="statsBox">{{ newChar.str }}</span> STR</span><br/>
+        <span class="stats"><span class="statsBox">{{ newChar.dex }}</span> DEX</span><br/>
+        <span class="stats"><span class="statsBox">{{ newChar.con }}</span> CON</span><br/>
+        <span class="stats"><span class="statsBox">{{ newChar.int }}</span> INT</span><br/>
+        <span class="stats"><span class="statsBox">{{ newChar.chr }}</span> CHR</span><br/>
+        <span class="stats"><span class="statsBox">{{ newChar.wis }}</span> WIS</span><br/>
+      </div>
+      <div class="abilities">
+        <span class="abilText">Hit Prob: {{ newChar.hitProbability}} Dmg Adj: {{ newChar.damageAdjustment}} Wgt Allow: {{ newChar.weightAllowance}} Max Press: {{ newChar.maxPress}} Op Drs: {{ newChar.openDoorsOnA}} BB LG: {{ newChar.bendBarsLiftGates}}%</span><br/>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+<script type="text/javascript">
+var app = new Vue({
+  el: '#app',
+  data: {
+    pretitle: 'Advanced',
+    title: 'Dungeons & Dragons',
+    subtitle: 'PLAYER CHARACTER RECORD',
+    newChar: 'Loading...'
+  },
+  mounted: function() {
+      var self = this;
+      $.ajax({
+        url: '/character',
+        complete: function(data) {
+          console.log(data.responseJSON);
+          self.newChar = data.responseJSON;
+        },
+        error: function() {
+          console.log('Error');
+        }
+      })
+    }
+  });
+</script>
+</html>

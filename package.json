@@ -1,0 +1,14 @@
+{
+  "name": "adnd_gm_aid",
+  "version": "1.0.0",
+  "description": "Programming some GM aids for AD&D",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
