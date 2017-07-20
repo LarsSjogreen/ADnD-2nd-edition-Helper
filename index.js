@@ -3,6 +3,7 @@ const dice = require('./dice');
 const character = require('./characterBuilder');
 const menu = require('./menu');
 const server = require('./expressServer');
+const tableReader = require('./tableReader');
 
 // Apologies for the crappy code. I didn't take time to refactor. I didn't write any tests.
 // Based on AD&D Players Handbook 2nd edition
@@ -40,6 +41,12 @@ r1.on('line', (line) => {
       break;
     case "E":
       console.log("Roll 3d4: " + dice.roll(3, dice.d4));
+      break;
+    case "F":
+      var stats = character.generateStats();
+//      stats = tableReader.readTableForAttribute(stats, './tableFiles/wisTable.csv');
+      stats = tableReader.readTableForAttribute(stats, './tableFiles/dexTable.csv');
+      console.log(stats);
       break;
     case "S":
       serverInstance = server.startServer(character);
