@@ -36,7 +36,7 @@ r1.on('line', (line) => {
       console.log("Not done");
       break;
     case "D":
-      console.log("Diceroll: " + dice.r3d6());
+      console.log("Diceroll 3d6: " + dice.roll(3, dice.d6));
       break;
     case "E":
       console.log("Roll 3d4: " + dice.roll(3, dice.d4));

@@ -25,18 +25,6 @@ var dice = (function() {
     return mathHelp.randomInt(1,21);
   };
 
-  var r3d6 = function() {
-    return d6()+d6()+d6();
-  };
-
-  var r10d10 = function() {
-    var sum = 0;
-    for (var i=0;i<10;i++) {
-      sum += mathHelp.randomInt(1,11);
-    }
-    return sum;
-  };
-
   var roll = function(numDice, dieFunc) {
     var sum = 0;
     for (var i=0;i<numDice;i++) {
@@ -52,8 +40,6 @@ var dice = (function() {
     d10: d10,
     d12: d12,
     d20: d20,
-    r3d6: r3d6,
-    r10d10: r10d10,
     roll: roll
   };
 }());

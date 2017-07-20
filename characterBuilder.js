@@ -6,12 +6,12 @@ var characterBuilder = (function () {
   var generateStats = function() {
     var stats = { str: 0, int: 0, wis: 0, dex: 0, con: 0, cha: 0};
     stats.name = nameGenerator.generateName();
-    stats.str = dice.r3d6();
-    stats.int = dice.r3d6();
-    stats.wis = dice.r3d6();
-    stats.dex = dice.r3d6();
-    stats.con = dice.r3d6();
-    stats.chr = dice.r3d6();
+    stats.str = dice.roll(3, dice.d6);
+    stats.int = dice.roll(3, dice.d6);
+    stats.wis = dice.roll(3, dice.d6);
+    stats.dex = dice.roll(3, dice.d6);
+    stats.con = dice.roll(3, dice.d6);
+    stats.chr = dice.roll(3, dice.d6);
     return enrichStats(stats);
   };
 
@@ -63,7 +63,7 @@ var characterBuilder = (function () {
           break;
         case "Magic-user":
           baseAge = 24;
-          baseAge += dice.d8() + dice.d8();
+          baseAge += dice.roll(2, dice.d8)
           break;
         case "Illusionist":
           baseAge = 30;
@@ -74,15 +74,15 @@ var characterBuilder = (function () {
       }
       stats.age = baseAge;
     } else if (stats.race == "Dwarf") {
-      stats.age = 250 + dice.d20() + dice.d20();
+      stats.age = 250 + dice.roll(2, dice.d20);
     } else if (stats.race == "Elf") {
-      stats.age = 500 + dice.r10d10();
+      stats.age = 500 + dice.roll(10, dice.d10);
     } else if (stats.race == "Gnome") {
-      stats.age = 300 + dice.d12() + dice.d12() + dice.d12();
+      stats.age = 300 + dice.roll(3, dice.d12);
     } else if (stats.race == "Half-Elf") {
-      stats.age = 40 + dice.d4() + dice.d4();
+      stats.age = 40 + dice.roll(2, dice.d4);
     } else if (stats.race == "Halfling") {
-      stats.age = 20 + dice.d4() + dice.d4() + dice.d4();
+      stats.age = 20 + dice.roll(3, dice.d4);
     } else if (stats.race == "Half-Orc") {
       stats.age = 20 + dice.d4();
     }
