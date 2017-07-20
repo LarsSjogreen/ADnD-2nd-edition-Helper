@@ -11,7 +11,7 @@ var characterBuilder = (function () {
     stats.wis = dice.r3d6();
     stats.dex = dice.r3d6();
     stats.con = dice.r3d6();
-    stats.chr = dice.r3d6();
+    stats.cha = dice.r3d6();
     return enrichStats(stats);
   };
 
@@ -19,6 +19,7 @@ var characterBuilder = (function () {
     stats = enrichStatsStr(stats);
     stats = enrichStatsInt(stats);
     stats = finalizeCharacter(stats);
+    stats = enrichStatsCon(stats);  // Bonuses dependent on character class
     return stats;
   };
 
@@ -305,6 +306,41 @@ var characterBuilder = (function () {
       default:
 
     }
+    return stats;
+  };
+
+  var enrichStatsCon = function(stats) {
+      stats.hitPointAdjustment = 0;
+      switch (stats.con) {
+        case 3:
+          stats.hitPointAdjustment = -2;
+          break;
+        case 4:
+        case 5:
+        case 6:
+          stats.hitPointAdjustment = -1;
+          break;
+        case 15:
+          stats.hitPointAdjustment = 1;
+          break;
+        case 16:
+          stats.hitPointAdjustment = 2;
+          break;
+        case 17:
+          stats.hitPointAdjustment = 2;
+          if ((stats.class == "Fighter") || (stats.class == "Paladin") || (stats.class == "Ranger")) {
+            stats.hitPointAdjustment = 3;
+          }
+          break;
+        case 18:
+          stats.hitPointAdjustment = 2;
+          if ((stats.class == "Fighter") || (stats.class == "Paladin") || (stats.class == "Ranger")) {
+            stats.hitPointAdjustment = 4;
+          }
+          break;
+        default:
+
+      }
     return stats;
   };
 
