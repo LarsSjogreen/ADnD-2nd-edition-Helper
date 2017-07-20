@@ -311,32 +311,86 @@ var characterBuilder = (function () {
 
   var enrichStatsCon = function(stats) {
       stats.hitPointAdjustment = 0;
+      stats.systemShockSurvival = 0;
+      stats.resurectionSurvival = 0;
       switch (stats.con) {
         case 3:
           stats.hitPointAdjustment = -2;
+          stats.systemShockSurvival = 35;
+          stats.resurectionSurvival = 40;
           break;
         case 4:
+            stats.hitPointAdjustment = -1;
+            stats.systemShockSurvival = 40;
+            stats.resurectionSurvival = 45;
+            break;
         case 5:
+            stats.hitPointAdjustment = -1;
+            stats.systemShockSurvival = 45;
+            stats.resurectionSurvival = 50;
+            break;
         case 6:
           stats.hitPointAdjustment = -1;
+          stats.systemShockSurvival = 50;
+          stats.resurectionSurvival = 55;
           break;
+        case 7:
+            stats.systemShockSurvival = 55;
+            stats.resurectionSurvival = 60;
+            break;
+        case 8:
+            stats.systemShockSurvival = 60;
+            stats.resurectionSurvival = 65;
+            break;
+        case 9:
+            stats.systemShockSurvival = 65;
+            stats.resurectionSurvival = 70;
+            break;
+        case 10:
+            stats.systemShockSurvival = 70;
+            stats.resurectionSurvival = 75;
+            break;
+        case 11:
+            stats.systemShockSurvival = 75;
+            stats.resurectionSurvival = 80;
+            break;
+        case 12:
+            stats.systemShockSurvival = 80;
+            stats.resurectionSurvival = 85;
+            break;
+        case 13:
+            stats.systemShockSurvival = 85;
+            stats.resurectionSurvival = 90;
+            break;
+        case 14:
+            stats.systemShockSurvival = 88;
+            stats.resurectionSurvival = 92;
+            break;
         case 15:
           stats.hitPointAdjustment = 1;
+          stats.systemShockSurvival = 91;
+          stats.resurectionSurvival = 94;
           break;
         case 16:
           stats.hitPointAdjustment = 2;
+          stats.systemShockSurvival = 95;
+          stats.resurectionSurvival = 96;
           break;
         case 17:
           stats.hitPointAdjustment = 2;
           if ((stats.class == "Fighter") || (stats.class == "Paladin") || (stats.class == "Ranger")) {
             stats.hitPointAdjustment = 3;
           }
+          stats.systemShockSurvival = 97;
+          stats.resurectionSurvival = 98;
           break;
         case 18:
           stats.hitPointAdjustment = 2;
           if ((stats.class == "Fighter") || (stats.class == "Paladin") || (stats.class == "Ranger")) {
             stats.hitPointAdjustment = 4;
           }
+          stats.systemShockSurvival = 99;
+          stats.resurectionSurvival = 100;
           break;
         default:
 
