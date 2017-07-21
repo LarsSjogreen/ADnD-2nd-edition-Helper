@@ -4,7 +4,7 @@ var nameGenerator = require('./nameGenerator');
 
 var characterBuilder = (function () {
   var generateStats = function() {
-    var stats = { str: 0, int: 0, wis: 0, dex: 0, con: 0, cha: 0};
+    var stats = { str: 0, int: 0, wis: 0, dex: 0, con: 0, chr: 0};
     stats.name = nameGenerator.generateName();
     stats.str = dice.roll(3, dice.d6);
     stats.int = dice.roll(3, dice.d6);
