@@ -1,3 +1,9 @@
+@font-face {
+	font-family: 'FrizQuadrataRegular';
+	src: url('./FrizQuadrataRegular.eot');
+	src: local('FrizQuadrataRegular'), url('./FrizQuadrataRegular.woff') format('woff'), url('./FrizQuadrataRegular.ttf') format('truetype');
+}
+
 #app {
   background: #6BB;
   border: 3px solid #000;
@@ -8,21 +14,26 @@
 .title {
   float: right;
   background: #6bb;
-  padding: 8px;
+  padding: 22px;
+  font-family: 'FrizQuadrataRegular';
+  margin: 22px;
+  margin-right: 0px;
   margin-top: 0px;
-  padding-top: 20px;
+  width: 500;
+  text-align: center;
 }
 
 .pretitle {
   float: left;
-  margin-top: -20px;
-  margin-left: 12px;
   font-size: 16px;
+  margin-left: 100px;
+  line-height: 0px;
 }
 
 .subtitle {
   font-size: 20px;
   text-align: center;
+  font-family: 'Lora', serif;
 }
 
 .characterInfo {
