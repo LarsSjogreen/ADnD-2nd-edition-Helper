@@ -44,7 +44,7 @@ r1.on('line', (line) => {
       break;
     case "F":
       var stats = character.generateStats();
-//      stats = tableReader.readTableForAttribute(stats, './tableFiles/wisTable.csv');
+      stats = tableReader.readTableForAttribute(stats, './tableFiles/wisTable.csv');
       stats = tableReader.readTableForAttribute(stats, './tableFiles/dexTable.csv');
       console.log(stats);
       break;

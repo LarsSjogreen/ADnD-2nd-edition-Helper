@@ -1,5 +1,4 @@
 var fs = require('fs');
-var parse = require('csv-parse');
 
 var tableReader = (function() {
   var attribute = 'none';
