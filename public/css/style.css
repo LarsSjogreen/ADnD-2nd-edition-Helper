@@ -82,7 +82,7 @@
   float: right;
   width: 440px;
   height: 166px;
-  margin-top: 12px;
+  margin-top: 0px;
 }
 
 .abilText {
@@ -95,4 +95,10 @@
   border-bottom: 1.5px solid black;
   width: 100%;
   height: 26px;
+}
+
+.boxheader {
+  font-weight: bold;
+  text-align: center;
+  padding: 0px;
 }
