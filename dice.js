@@ -5,6 +5,18 @@ var dice = (function() {
     return mathHelp.randomInt(1, 7);
   };
 
+  var roll_methodIII = function(numDice, dieFunc) {
+    var highest = 0;
+    var result = 0;
+    for (var i=0;i<6;i++) {
+      result = roll(numDice,dieFunc);
+      if (result > highest) {
+        highest = result;
+      }
+    }
+    return highest;
+  }
+
   var d4 = function() {
     return mathHelp.randomInt(1, 5);
   };
@@ -40,7 +52,8 @@ var dice = (function() {
     d10: d10,
     d12: d12,
     d20: d20,
-    roll: roll
+    roll: roll,
+    roll_methodIII: roll_methodIII
   };
 }());
 

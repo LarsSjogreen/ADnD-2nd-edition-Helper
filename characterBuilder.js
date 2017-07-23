@@ -6,12 +6,12 @@ var characterBuilder = (function () {
   var generateStats = function() {
     var stats = { str: 0, int: 0, wis: 0, dex: 0, con: 0, chr: 0};
     stats.name = nameGenerator.generateName();
-    stats.str = dice.roll(3, dice.d6);
-    stats.int = dice.roll(3, dice.d6);
-    stats.wis = dice.roll(3, dice.d6);
-    stats.dex = dice.roll(3, dice.d6);
-    stats.con = dice.roll(3, dice.d6);
-    stats.chr = dice.roll(3, dice.d6);
+    stats.str = dice.roll_methodIII(3, dice.d6);
+    stats.int = dice.roll_methodIII(3, dice.d6);
+    stats.wis = dice.roll_methodIII(3, dice.d6);
+    stats.dex = dice.roll_methodIII(3, dice.d6);
+    stats.con = dice.roll_methodIII(3, dice.d6);
+    stats.chr = dice.roll_methodIII(3, dice.d6);
     return enrichStats(stats);
   };
 
