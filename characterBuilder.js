@@ -1,6 +1,7 @@
 var dice = require('./dice');
 var mathHelp = require('./mathHelp');
 var nameGenerator = require('./nameGenerator');
+var tableReader = require('./tableReader');
 
 var characterBuilder = (function () {
   var generateStats = function() {
@@ -20,6 +21,7 @@ var characterBuilder = (function () {
     stats = enrichStatsInt(stats);
     stats = finalizeCharacter(stats);
     stats = enrichStatsCon(stats);  // Bonuses dependent on character class
+    stats = enrichFromTableFiles(stats);
     return stats;
   };
 
@@ -29,6 +31,12 @@ var characterBuilder = (function () {
     stats = getAlignment(stats);
     stats = getAge(stats);
     stats = getStatic(stats);
+    return stats;
+  }
+
+  var enrichFromTableFiles = function(stats) {
+    stats = tableReader.readTableForAttribute(stats, './tableFiles/wisTable.csv');
+    stats = tableReader.readTableForAttribute(stats, './tableFiles/dexTable.csv');
     return stats;
   }
 
