@@ -3,13 +3,18 @@
   <title>AD&amp;D GM assistant</title>
   <script src="js/vue.js"></script>
   <script src="js/jquery-3.2.1.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lora:700" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 
 
 <body>
   <div id="app">
-    <h1 class="title"><span class="pretitle">{{ pretitle }}</span>{{ title }}<br/><span class="subtitle">{{ subtitle }}</span></h1>
+    <h1 class="title">
+        <span class="pretitle">{{ pretitle }}</span>
+        <span v-html="title"></span><br />
+        <span class="subtitle">{{ subtitle }}</span>
+    </h1>
     <p class="characterInfo">
       <span class="charNameText">Character: {{ newChar.name }}</span><br/>
       <span class="charText">Align.: {{ newChar.alignment }}</span>
@@ -43,7 +48,7 @@ var app = new Vue({
   el: '#app',
   data: {
     pretitle: 'Advanced',
-    title: 'Dungeons & Dragons',
+    title: 'Dung<span style="border-bottom: 4px solid black; display:inline-block; line-height:32px;">eons&Dra</span>gons',
     subtitle: 'PLAYER CHARACTER RECORD',
     newChar: 'Loading...'
   },
