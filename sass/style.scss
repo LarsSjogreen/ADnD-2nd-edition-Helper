@@ -7,22 +7,34 @@
 }
 
 #app {
-  background: $charsheet-background;
-  border: 3px solid #000;
-  padding: 4px;
-  font-size: 18px;
+}
+
+.mainDocument {
+  background: $colored-background-color;
+  border: $borderFat;
+  padding: $padding-normal;
+  margin: 14px;
+  font-size: $font-normal;
 }
 
 .title {
   float: right;
-  background: $charsheet-background;
-  padding: 22px;
+  background: $colored-background-color;
+  padding: $padding-large;
   font-family: 'FrizQuadrataRegular';
-  margin: 22px;
-  margin-right: 0px;
-  margin-top: 0px;
-  width: 500;
+  margin-left: 22px;
+  margin-bottom: 22px;
+  min-width: 450;
   text-align: center;
+  font-size: $font-large;
+}
+
+.underscored-title {
+  border-bottom: 5px solid black;
+  display:inline-block;
+  line-height:18px;
+  margin-bottom: 12px;
+  margin-top: 10px;
 }
 
 .pretitle {
@@ -39,16 +51,17 @@
 }
 
 .characterInfo {
-  padding: 12px;
-  background: #FFF;
+  padding: $padding-normal;
+  background: $light-background-color;
 }
 
 .characterAbilities {
-  padding: 12px;
+  padding: $padding-normal;
+  padding-top: 18px;
 }
 
 .charText {
-  background: #FFF;
+  background: $light-background-color;
   display: inline-block;
   width: 180px;
   padding: 2px;
@@ -60,47 +73,45 @@
   width: 500px;
 }
 
-.stats {
-}
-
 .row {
   display: flex;
+  padding-top: 18px;
 }
 
 .statsBox {
   display: inline-block;
   text-align: right;
-  width: 24px;
+  width: 22px;
   height: 20px;
-  background: #FFF;
+  background: $light-background-color;
   padding: 4px;
-  border: 1.5px solid black;
+  border: $borderNormal;
   margin: -1.5px;
+  margin-left: -11px;
 }
 
 .abilities {
-  border: 1.5px solid black;
-  background: #FFF;
+  border: $borderNormal;
+  background: $light-background-color;
   float: right;
-  width: 440px;
+  width: 420px;
   height: 166px;
-  margin-top: 0px;
 }
 
 .abilText {
-  padding: 3px;
-  font-size: 13px;
+  padding-top: 3px;
+  font-size: 12px;
   padding: 4px;
 }
 
 .abilRow {
-  border-bottom: 1.5px solid black;
+  border-bottom: $borderNormal;
   width: 100%;
   height: 26px;
+  padding-top: 6px;
 }
 
 .boxheader {
   font-weight: bold;
   text-align: center;
-  padding: 0px;
 }

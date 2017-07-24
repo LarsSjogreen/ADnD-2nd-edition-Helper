@@ -9,7 +9,7 @@
 
 
 <body>
-  <div id="app">
+  <div id="app" class="mainDocument">
     <h1 class="title">
         <span class="pretitle">{{ pretitle }}</span>
         <span v-html="title"></span><br />
@@ -41,6 +41,8 @@
         <div class="abilRow"><span class="abilText">Hit Prob: {{ newChar.hitProbability}} Dmg Adj: {{ newChar.damageAdjustment}} Wgt Allow: {{ newChar.weightAllowance}} Max Press: {{ newChar.maxPress}} Op Drs: {{ newChar.openDoorsOnA}} BB LG: {{ newChar.bendBarsLiftGates}}%</span></div>
         <div class="abilRow"><span class="abilText">Rctn adj: {{ newChar.reactionAndAttackingAdjustment }} Missile adj: {{ newChar.missileAdjustment }} Def Adj: {{ newChar.defensiveAdjustment }}</span></div>
         <div class="abilRow"><span class="abilText">HP adj: {{ newChar.hitPointAdjustment }} Sys Shk: {{ newChar.systemShockSurvival }} Res Sur: {{ newChar.resurectionSurvival }} Pois save: {{ newChar.poisonSave }} Regen: {{ newChar.regenerate }}</span></div>
+        <div class="abilRow"><span class="abilText">HP adj: {{ newChar.hitPointAdjustment }} Sys Shk: {{ newChar.systemShockSurvival }} Res Sur: {{ newChar.resurectionSurvival }} Pois save: {{ newChar.poisonSave }} Regen: {{ newChar.regenerate }}</span></div>
+        <div class="abilRow"><span class="abilText">HP adj: {{ newChar.hitPointAdjustment }} Sys Shk: {{ newChar.systemShockSurvival }} Res Sur: {{ newChar.resurectionSurvival }} Pois save: {{ newChar.poisonSave }} Regen: {{ newChar.regenerate }}</span></div>
       </div>
     </div>
     </div>
@@ -53,7 +55,7 @@ var app = new Vue({
   el: '#app',
   data: {
     pretitle: 'Advanced',
-    title: 'Dung<span style="border-bottom: 4px solid black; display:inline-block; line-height:32px;">eons&Dra</span>gons',
+    title: 'Dung<span class="underscored-title">eons&Dra</span>gons',
     subtitle: 'PLAYER CHARACTER RECORD',
     newChar: 'Loading...'
   },

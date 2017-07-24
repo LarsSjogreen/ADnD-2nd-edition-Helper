@@ -19,6 +19,12 @@ module.exports = function(grunt) {
         scripts: {
           files: ['sass/*.scss'],
           tasks: ['compass'],
+          options: {
+            livereload: {
+              host: 'localhost',
+              port: 3000,
+            },
+          },
         },
       },
     });

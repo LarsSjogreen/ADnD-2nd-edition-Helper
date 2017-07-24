@@ -1,3 +1,15 @@
-$charsheet-background: #6BB;
+@import "compass/reset";
+$colored-background-color: #6BB;
+$light-background-color: #FFF;
+$border-color: #000;
 
-//@import "compass/reset";
+$padding-normal: 12px;
+$padding-large: 22px;
+
+$font-large: 22px;
+$font-normal: 18px;
+$font-small: 14px;
+$font-micro: 12px;
+
+$borderNormal: 1.5px solid $border-color;
+$borderFat: 3px solid $border-color;

@@ -1,7 +1,9 @@
 var express = require('express');
+var livereload = require('express-livereload')
 
 var expressServer = (function() {
   var app = express();
+  livereload(app, config = {});
   var isRunning = false;
 
   var startServer = function(characterBuilder) {
