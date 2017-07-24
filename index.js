@@ -1,6 +1,7 @@
 const readline = require('readline');
 const dice = require('./dice');
 const character = require('./characterBuilder');
+const menuBuilder = require('./menuBuilder');
 const menu = require('./menu');
 const server = require('./expressServer');
 const tableReader = require('./tableReader');

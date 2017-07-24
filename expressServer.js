@@ -1,5 +1,6 @@
 var express = require('express');
 var livereload = require('express-livereload')
+var menuBuilder = require('./menuBuilder');
 
 var expressServer = (function() {
   var app = express();
@@ -20,6 +21,11 @@ var expressServer = (function() {
     app.get('/character', function(req,res) {
       res.type('text/json');
       res.send(characterBuilder.generateStats());
+    });
+
+    app.get('/menu', function(req,res) {
+      res.type('text/json');
+      res.send(menuBuilder.getMenu());
     });
 
     isRunning = true;
