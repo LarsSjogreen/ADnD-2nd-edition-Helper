@@ -8,11 +8,13 @@ Move fast, break things. Settle with good enough or worse. (See [The Cult of don
 ## Things to do in near time
 - [ ] Make the web page look more nicer
 - [ ] Add a menu to the web page
-- [ ] Add a csv file reader that can be used for adding attribute bonuses
+
+## Done
+- [x] Add a csv file reader that can be used for adding attribute bonuses
 
 ## Ideas for the future
 - [ ] NPC generator
-- [ ] Using Buefy to make it look a bit nicer
+- [ ] Using Buefy or other framework to make it look a bit nicer
 - [ ] PDF generator for character sheet
 - [ ] Treasure-, dungeon- and other generator tables
 
@@ -23,4 +25,5 @@ Happy coding therapy. The software will (and should) probably never be used.
 ```node index.js```
 
 ## To develop
-You need Compass to run Grunt. First install Ruby, then install compass like this ```gem install compass```
+You need Compass to run Grunt. First install Ruby, then install compass like this: ```gem install compass```
+Activate Chrome reload in your web browser to get automatic reload of sass/HTML changes (together with ```grunt watch```)

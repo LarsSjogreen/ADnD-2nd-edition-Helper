@@ -16,11 +16,6 @@ var expressServer = (function() {
 
     app.use(express.static('public'));
 
-    app.get('/', function(req, res) {
-      res.type('text/plain');
-      res.send('AD&D GM support system v1.0');
-    });
-
     // Returns a JSON object with a AD&D character
     app.get('/character', function(req,res) {
       res.type('text/json');
