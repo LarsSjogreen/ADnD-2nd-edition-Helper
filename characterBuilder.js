@@ -42,7 +42,7 @@ var characterBuilder = (function () {
 
   var getStatic = function(stats) {
     stats.level = 1;
-    stats.playerName = "____________________________";
+    stats.playerName = "";
     stats.family = "von Neumann";
     stats.sex = ["Female","Male"][mathHelp.randomInt(0,2)];
     return stats;

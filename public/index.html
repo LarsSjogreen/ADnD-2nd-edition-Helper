@@ -17,14 +17,23 @@
     </h1>
     <p class="characterInfo">
       <span class="charNameText">Character: {{ newChar.name }}</span><br/>
-      <span class="charText">Align.: {{ newChar.alignment }}</span>
-      <span class="charText">Race: {{ newChar.race }}</span>
-      <span class="charText">Class: {{ newChar.class }}</span>
-      <span class="charText">Level: {{ newChar.level }}</span>
+      <span class="charText">Align. {{ newChar.alignment }}</span>
+      <span class="charText">Race {{ newChar.race }}</span>
+      <span class="charText">Class {{ newChar.class }}</span>
+      <span class="charText">Level {{ newChar.level }}</span>
       <br/>
-      <span class="charNameText">Player's name: {{ newChar.playerName }}</span>
+      <span class="charNameText">Player's name {{ newChar.playerName }}</span>
+      <span class="charText">Family {{ newChar.family }}</span>
+      <span class="charText">Race/clan {{ newChar.raceClan }}</span>
       <br/>
-      <span class="charText">Sex: {{ newChar.sex }}</span><span class="charText">Age:  {{ newChar.age }}</span>
+      <span class="charNameText">Homeland {{ newChar.homeland }}</span>
+      <span class="charText">Liege/patron {{ newChar.liegePatron }}</span>
+      <span class="charText">Religion {{ newChar.religion }}</span>
+      <br/>
+      <span class="charText">Sex {{ newChar.sex }}</span>
+      <span class="charText">Age  {{ newChar.age }}</span>
+      <span class="charText">Social class {{ newChar.socialClass }}</span>
+      <span class="charText">Status {{ newChar.status }}</span>
     </p>
     <div class="row">
       <div class="characterAbilities">

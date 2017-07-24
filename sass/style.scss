@@ -19,6 +19,8 @@
 
 .title {
   float: right;
+  right: 20px;
+  position: absolute;
   background: $colored-background-color;
   padding: $padding-large;
   font-family: 'FrizQuadrataRegular';
@@ -27,6 +29,7 @@
   min-width: 450;
   text-align: center;
   font-size: $font-large;
+  z-index: 2;
 }
 
 .underscored-title {
@@ -52,7 +55,9 @@
 
 .characterInfo {
   padding: $padding-normal;
+  margin-top: 60px;
   background: $light-background-color;
+  line-height: 22px;
 }
 
 .characterAbilities {
@@ -61,16 +66,34 @@
 }
 
 .charText {
+  z-index: 2;
   background: $light-background-color;
   display: inline-block;
-  width: 180px;
-  padding: 2px;
+  width: 220px;
+  padding: $field-padding;
+  vertical-align: bottom;
 }
 
 .charNameText {
-  padding: 2px;
+  padding: $field-padding;
   padding-bottom: 4px;
-  width: 500px;
+  width: 560px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.underscore {
+  display: table-cell;
+  width: 100%;
+  margin-top: -6px;
+  border-bottom: 1px solid #ccc;
+  vertical-align: bottom;
+}
+
+.noUnderscore {
+  display: table-cell;
+  margin-bottom: 3px;
+  vertical-align: bottom;
 }
 
 .row {
