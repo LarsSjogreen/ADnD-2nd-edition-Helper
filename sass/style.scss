@@ -6,6 +6,7 @@
 	src: local('FrizQuadrataRegular'), url('./FrizQuadrataRegular.woff') format('woff'), url('./FrizQuadrataRegular.ttf') format('truetype');
 }
 
+
 #app {
 }
 
@@ -29,26 +30,29 @@
   min-width: 450;
   text-align: center;
   font-size: $font-large;
-  z-index: 2;
+  font-weight: bold;
 }
 
 .underscored-title {
-  border-bottom: 5px solid black;
+  border-bottom: 7px solid black;
   display:inline-block;
-  line-height:18px;
+  line-height:26px;
   margin-bottom: 12px;
   margin-top: 10px;
 }
 
 .pretitle {
   float: left;
-  font-size: 16px;
-  margin-left: 100px;
+  font-size: $font-micro;
+  margin-left: 130px;
   line-height: 0px;
+  position: relative;
+  top: 7px;
+  left: 5;
 }
 
 .subtitle {
-  font-size: 20px;
+  font-size: 17px;
   text-align: center;
   font-family: 'Lora', serif;
 }
@@ -66,7 +70,6 @@
 }
 
 .charText {
-  z-index: 2;
   background: $light-background-color;
   display: inline-block;
   width: 220px;
@@ -74,25 +77,21 @@
   vertical-align: bottom;
 }
 
+.charTextShort {
+  @extend .charText;
+  width: 180px;
+}
+
+.charTextMedium {
+  @extend .charText;
+  width: 340px;
+}
+
 .charNameText {
   padding: $field-padding;
   padding-bottom: 4px;
   width: 560px;
   display: inline-block;
-  vertical-align: bottom;
-}
-
-.underscore {
-  display: table-cell;
-  width: 100%;
-  margin-top: -6px;
-  border-bottom: 1px solid #ccc;
-  vertical-align: bottom;
-}
-
-.noUnderscore {
-  display: table-cell;
-  margin-bottom: 3px;
   vertical-align: bottom;
 }
 
@@ -121,9 +120,19 @@
   height: 166px;
 }
 
+.movement {
+  @extend .abilities;
+  width: 300px;
+  margin-left: 25px;
+}
+
+.savingThrows {
+  @extend .movement;
+}
+
 .abilText {
   padding-top: 3px;
-  font-size: 12px;
+  font-size: $font-micro;
   padding: 4px;
 }
 
