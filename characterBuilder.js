@@ -37,6 +37,7 @@ var characterBuilder = (function () {
   var enrichFromTableFiles = function(stats) {
     stats = tableReader.readTableForAttribute(stats, './tableFiles/wisTable.csv');
     stats = tableReader.readTableForAttribute(stats, './tableFiles/dexTable.csv');
+    stats = tableReader.readTableForAttribute(stats, './tableFiles/chrTable.csv');
     return stats;
   }
 
