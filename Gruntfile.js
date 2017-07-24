@@ -17,12 +17,12 @@ module.exports = function(grunt) {
           },
         },
         scripts: {
-          files: 'sass/*.scss',
-          tasks: 'compass',
+          files: ['sass/*.scss'],
+          tasks: ['compass'],
         },
       },
     });
-    grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.registerTask('default', ['compass']);
 };

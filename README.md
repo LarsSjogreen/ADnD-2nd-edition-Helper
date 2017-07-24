@@ -18,3 +18,9 @@ Move fast, break things. Settle with good enough or worse. (See [The Cult of don
 
 ## Purpose of this project
 Happy coding therapy. The software will (and should) probably never be used.
+
+## To use the project
+```node index.js```
+
+## To develop
+You need Compass to run Grunt. First install Ruby, then install compass like this ```gem install compass```
