@@ -3,19 +3,21 @@
   <title>{{ title }}</title>
   <script src="js/vue.js"></script>
   <script src="js/jquery-3.2.1.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="css/indexStyle.css"/>
 </head>
 <body>
   <div id="app">
-    <ul>
-      <li v-for="(item, itemKey) in menu">
-        {{ itemKey }}
-        <ul>
-          <li v-for="(subItem, subItemKey) in item">
-            <a v-bind:href='subItem'>{{ subItemKey }}</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
+          <ul class="nav">
+            <li v-for="(item, itemKey) in menu">
+            <a href="javascript:;" class="fade">{{ itemKey }}</a>
+              <ul class="subItems">
+                <li v-for="(subItem, subItemKey) in item">
+                  <a v-bind:href='subItem' class="fade">{{ subItemKey }}</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
   </div>
 </body>
 
