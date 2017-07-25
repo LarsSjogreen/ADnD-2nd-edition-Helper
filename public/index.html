@@ -3,15 +3,16 @@
   <title>{{ title }}</title>
   <script src="js/vue.js"></script>
   <script src="js/jquery-3.2.1.min.js"></script>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
   <div id="app">
-    <ul>
-      <li v-for="(item, itemKey) in menu">
-        {{ itemKey }}
-        <ul>
-          <li v-for="(subItem, subItemKey) in item">
-            <a v-bind:href='subItem'>{{ subItemKey }}</a>
+    <ul class="menu">
+      <li class="menuItem" v-for="(item, itemKey) in menu">
+        <span v-on:mouseOver="mouseOver" v-on:mouseOut="mouseOut">{{ itemKey }}</span>
+        <ul v-on:mouseOver="mouseOver" v-on:mouseOut="mouseOut" class="subMenu" v-show="active" class="menuSubItem">
+          <li v-on:mouseOver="mouseOver" v-on:mouseOut="mouseOut" class="subMenuItem" v-for="(subItem, subItemKey) in item">
+            <a  v-on:mouseOver="mouseOver" v-on:mouseOut="mouseOut" v-bind:href='subItem'>{{ subItemKey }}</a>
           </li>
         </ul>
       </li>
@@ -24,7 +25,16 @@ var app = new Vue({
   el: '#app',
   data: {
     title: 'AD&D Helper',
-    menu: 'Loading...'
+    menu: 'Loading...',
+    active: false
+  },
+  methods: {
+    mouseOver: function() {
+      this.active = true;
+    },
+    mouseOut: function() {
+      this.active = false;
+    }
   },
   mounted: function() {
       var self = this;
