@@ -1,103 +1,38 @@
 <html>
 <head>
-  <title>AD&amp;D GM assistant</title>
+  <title>{{ title }}</title>
   <script src="js/vue.js"></script>
   <script src="js/jquery-3.2.1.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Lora:700" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css"/>
 </head>
-
-
 <body>
-  <div id="app" class="mainDocument">
-    <h1 class="title">
-        <span class="pretitle">{{ pretitle }}</span>
-        <span v-html="title"></span><br />
-        <span class="subtitle">{{ subtitle }}</span>
-    </h1>
-    <p class="characterInfo">
-      <span class="charNameText">Character: {{ newChar.name }}</span><br/>
-      <span class="charTextShort">Align. {{ newChar.alignment }}</span>
-      <span class="charTextShort">Race {{ newChar.race }}</span>
-      <span class="charTextShort">Class {{ newChar.class }}</span>
-      <span class="charTextShort">Level {{ newChar.level }}</span>
-      <br/>
-      <span class="charNameText">Player's name {{ newChar.playerName }}</span>
-      <span class="charText">Family {{ newChar.family }}</span>
-      <span class="charText">Race/clan {{ newChar.raceClan }}</span>
-      <br/>
-      <span class="charNameText">Homeland {{ newChar.homeland }}</span>
-      <span class="charText">Liege/patron {{ newChar.liegePatron }}</span>
-      <span class="charText">Religion {{ newChar.religion }}</span>
-      <br/>
-      <span class="charTextShort">Sex {{ newChar.sex }}</span>
-      <span class="charTextShort">Age  {{ newChar.age }}</span>
-      <span class="charTextMedium">Social class {{ newChar.socialClass }}</span>
-      <span class="charText">Status {{ newChar.status }}</span>
-      <br/>
-      <span class="charTextShort">Ht. {{ newChar.height }}</span>
-      <span class="charTextShort">Wt. {{ newChar.weight }}</span>
-      <span class="charTextMedium">Birth Rank {{ newChar.birthRank }}</span>
-      <span class="charText"># Siblings {{ newChar.siblings }}</span>
-      <br/>
-      <span class="charTextShort">Hair {{ newChar.hair }}</span>
-      <span class="charTextShort">Eyes {{ newChar.eyes }}</span>
-      <span class="charNameText">Appearance {{ newChar.appearance }}</span>
-      <br/>
-      <span class="charText">Honor {{ newChar.honor }}</span>
-      <span class="charText">(Base Honor {{ newChar.baseHonor }})</span>
-      <span class="charText">Reaction adjustment {{ newChar.reactionAdjustment }}</span>
-    </p>
-    <div class="row">
-      <div class="characterAbilities">
-        <span class="stats"><span class="statsBox">{{ newChar.str }}</span> STR</span><br/>
-        <span class="stats"><span class="statsBox">{{ newChar.dex }}</span> DEX</span><br/>
-        <span class="stats"><span class="statsBox">{{ newChar.con }}</span> CON</span><br/>
-        <span class="stats"><span class="statsBox">{{ newChar.int }}</span> INT</span><br/>
-        <span class="stats"><span class="statsBox">{{ newChar.wis }}</span> WIS</span><br/>
-        <span class="stats"><span class="statsBox">{{ newChar.chr }}</span> CHR</span><br/>
-      </div>
-      <div class="boxHeader">
-        <span>ABILITIES</span><br/>
-        <div class="abilities">
-          <div class="abilRow"><span class="abilText">Hit Prob {{ newChar.hitProbability}} Dmg Adj: {{ newChar.damageAdjustment}} Wgt Allow: {{ newChar.weightAllowance}} Max Press: {{ newChar.maxPress}} Op Drs: {{ newChar.openDoorsOnA}} BB LG: {{ newChar.bendBarsLiftGates}}%</span></div>
-          <div class="abilRow"><span class="abilText">Rctn adj {{ newChar.reactionAndAttackingAdjustment }} Missile adj: {{ newChar.missileAdjustment }} Def Adj: {{ newChar.defensiveAdjustment }}</span></div>
-          <div class="abilRow"><span class="abilText">HP adj {{ newChar.hitPointAdjustment }} Sys Shk: {{ newChar.systemShockSurvival }} Res Sur: {{ newChar.resurectionSurvival }} Pois save: {{ newChar.poisonSave }} Regen: {{ newChar.regenerate }}</span></div>
-          <div class="abilRow"><span class="abilText">Mag Def Adjus: {{ newChar.magicalDefenseAdjustment }} Sys Shk: {{ newChar.systemShockSurvival }} Res Sur: {{ newChar.resurectionSurvival }} Pois save: {{ newChar.poisonSave }} Regen: {{ newChar.regenerate }}</span></div>
-          <div class="abilRow"><span class="abilText">Max No Hench {{ newChar.maximumNumberOfHenchmen }} Loy Base {{ newChar.loyaltyBase }} Rctn Adj {{ newChar.reactionAdjustment }}</span></div>
-        </div>
-      </div>
-      <div class="boxHeader">
-        <span>MOVEMENT</span><br/>
-        <div class="movement">
-        </div>
-      </div>
-      <div class="boxHeader">
-        <span>SAVING THROWS</span><br/>
-        <div class="savingThrows">
-        </div>
-      </div>
-    </div>
+  <div id="app">
+    <ul>
+      <li v-for="(item, itemKey) in menu">
+        {{ itemKey }}
+        <ul>
+          <li v-for="(subItem, subItemKey) in item">
+            <a v-bind:href='subItem'>{{ subItemKey }}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </body>
-
 
 <script type="text/javascript">
 var app = new Vue({
   el: '#app',
   data: {
-    pretitle: 'Advanced',
-    title: 'Dung<span class="underscored-title">eons&Dra</span>gons',
-    subtitle: 'PLAYER CHARACTER RECORD',
-    newChar: 'Loading...'
+    title: 'AD&D Helper',
+    menu: 'Loading...'
   },
   mounted: function() {
       var self = this;
       $.ajax({
-        url: '/character',
+        url: '/menu',
         complete: function(data) {
           console.log(data.responseJSON);
-          self.newChar = data.responseJSON;
+          self.menu = data.responseJSON;
         },
         error: function() {
           console.log('Error');
@@ -106,4 +41,5 @@ var app = new Vue({
     }
   });
 </script>
+
 </html>

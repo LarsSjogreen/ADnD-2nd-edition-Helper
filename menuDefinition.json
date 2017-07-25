@@ -1,0 +1,15 @@
+{
+  "Home": {
+    "Home": "index.html",
+    "About": "about.html",
+    "Contact us": "contact.html"
+  },
+  "Helpers": {
+    "CharacterBuilder": "characterBuilder.html",
+    "TreasureGenerator": "treasure.html",
+    "Monster generator": "monster.html"
+  },
+  "Help": {
+    "Tutorial": "tutorial.html"
+  }
+}
